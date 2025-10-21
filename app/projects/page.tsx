@@ -4,116 +4,145 @@ import { useState } from "react"
 import { ProjectCard } from "@/components/project-card"
 
 export default function ProjectsPage() {
-  const [activeFilter, setActiveFilter] = useState<string>("all")
+    const [activeFilter, setActiveFilter] = useState<string>("all")
 
-  const projects = [
-    {
-      id: "neural-network",
-      title: "Neural Network Visualizer",
-      description: "Interactive visualization of neural networks with real-time data processing and node connections.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vite", "React", "TypeScript", "D3.js"],
-      category: "ai",
-    },
-    {
-      id: "crypto-dashboard",
-      title: "Crypto Dashboard",
-      description: "Real-time cryptocurrency tracking dashboard with customizable widgets and alerts.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vite", "React", "TypeScript", "WebSockets", "Chart.js"],
-      category: "web",
-    },
-    {
-      id: "ai-chatbot",
-      title: "AI Chatbot",
-      description: "Conversational AI assistant with natural language processing and machine learning capabilities.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vite", "React", "TypeScript", "OpenAI API", "Zustand"],
-      category: "ai",
-    },
-    {
-      id: "blockchain-explorer",
-      title: "Blockchain Explorer",
-      description: "Tool for visualizing and exploring blockchain transactions and smart contracts.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vite", "React", "TypeScript", "Ethers.js", "GraphQL"],
-      category: "blockchain",
-    },
-    {
-      id: "data-visualization",
-      title: "Data Visualization Platform",
-      description: "Interactive platform for creating and sharing data visualizations and insights.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vite", "React", "TypeScript", "D3.js", "Vitest"],
-      category: "data",
-    },
-    {
-      id: "ar-navigation",
-      title: "AR Navigation System",
-      description: "Augmented reality navigation system for indoor and outdoor environments.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vite", "React", "TypeScript", "Three.js", "React Three Fiber"],
-      category: "ar",
-    },
-  ]
+    const projects = [
+        // Proyecto destacado 1: Reconocimiento Facial
+        {
+            id: "face-recognition-ml",
+            title: "Face Recognition Security System",
+            description: "Advanced ML system for facial recognition with custom algorithms (Eigenfaces, LBP, hybrid fusion) achieving 85-92% accuracy. Complete API ecosystem with 25+ endpoints and real-time alert system.",
+            image: "/placeholder.svg?height=400&width=600",
+            technologies: ["Python", "FastAPI", "OpenCV", "scikit-learn", "MySQL", "ML"],
+            category: "ai",
+        },
 
-  const categories = [
-    { id: "all", name: "All Projects" },
-    { id: "web", name: "Web Development" },
-    { id: "ai", name: "AI & Machine Learning" },
-    { id: "blockchain", name: "Blockchain" },
-    { id: "data", name: "Data Visualization" },
-    { id: "ar", name: "AR/VR" },
-  ]
+        // Proyecto destacado 2: ALPR System
+        {
+            id: "alpr-system",
+            title: "CARID: License Plate Recognition",
+            description: "ALPR system using YOLOv8 optimized for Peruvian plates with >90% detection accuracy. Modern React/TypeScript interface supporting image, video, and real-time streaming. Inference <150ms.",
+            image: "/placeholder.svg?height=400&width=600",
+            technologies: ["React", "TypeScript", "YOLOv8", "Python", "OpenCV"],
+            category: "ai",
+        },
 
-  const filteredProjects =
-    activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
+        // Proyecto 3: App Móvil
+        {
+            id: "face-recognition-mobile",
+            title: "Face Recognition Mobile App",
+            description: "Cross-platform mobile application with real-time facial recognition and camera integration. Material Design UI with dashboard, analytics, and security alert systems.",
+            image: "/placeholder.svg?height=400&width=600",
+            technologies: ["React Native", "Expo", "TypeScript", "AsyncStorage"],
+            category: "mobile",
+        },
 
-  return (
-    <div className="space-y-8">
-      <div className="terminal-window">
-        <div className="terminal-header">
-          <div className="terminal-button terminal-button-red"></div>
-          <div className="terminal-button terminal-button-yellow"></div>
-          <div className="terminal-button terminal-button-green"></div>
-          <div className="terminal-title">projects.sh</div>
+        // Proyecto 4: Sistema Terapéutico
+        {
+            id: "therapeutic-management",
+            title: "Therapeutic Management System",
+            description: "Enterprise-level system for healthcare centers managing medical inventory, schedules, and patient records with 99.9% availability. Led team of 5 developers delivering MVP 25% ahead of schedule.",
+            image: "/placeholder.svg?height=400&width=600",
+            technologies: ["Java 17", "Spring Boot", "PostgreSQL", "Docker", "Nginx"],
+            category: "web",
+        },
+
+        // Proyecto 5: ONG System
+        {
+            id: "ong-management",
+            title: "NGO Management System",
+            description: "Enterprise API for NGO volunteer management with JWT authentication and role-based access. Infrastructure as Code with Terraform managing AWS EC2, Cloudflare R2, and D1 database.",
+            image: "/placeholder.svg?height=400&width=600",
+            technologies: ["Spring Boot", "Terraform", "AWS", "Docker", "Jenkins"],
+            category: "cloud",
+        },
+
+        // Proyecto 6: Universidad
+        {
+            id: "university-enrollment",
+            title: "University Enrollment System",
+            description: "Full-stack enrollment management system with enterprise architecture. Three-tier architecture with Spring Boot backend, React frontend, Flyway migrations, and MapStruct object mapping.",
+            image: "/placeholder.svg?height=400&width=600",
+            technologies: ["Spring Boot", "React", "PostgreSQL", "Flyway", "MapStruct"],
+            category: "web",
+        },
+
+        // Proyecto 7: IoT Temperature
+        {
+            id: "iot-temperature",
+            title: "IoT Temperature Monitoring",
+            description: "REST API with FastAPI for real-time IoT sensor data processing. ML algorithms from scratch for thermal trend prediction with 92% accuracy. WebSockets processing 1000+ readings/minute.",
+            image: "/placeholder.svg?height=400&width=600",
+            technologies: ["Python", "FastAPI", "scikit-learn", "WebSockets", "ESP32"],
+            category: "ai",
+        },
+
+        // Proyecto 8: Préstamos
+        {
+            id: "loan-management",
+            title: "Loan Management System",
+            description: "Full-stack transactional system for loan management with REST API backend and responsive Angular frontend. Complete financial transaction processing with secure authentication.",
+            image: "/placeholder.svg?height=400&width=600",
+            technologies: ["Spring Boot", "Angular", "PostgreSQL", "REST API"],
+            category: "web",
+        },
+    ]
+
+    const categories = [
+        { id: "all", name: "All Projects" },
+        { id: "ai", name: "AI & Machine Learning" },
+        { id: "web", name: "Web Development" },
+        { id: "mobile", name: "Mobile Development" },
+        { id: "cloud", name: "Cloud & DevOps" },
+    ]
+
+    const filteredProjects =
+        activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
+
+    return (
+        <div className="space-y-8">
+            <div className="terminal-window">
+                <div className="terminal-header">
+                    <div className="terminal-button terminal-button-red"></div>
+                    <div className="terminal-button terminal-button-yellow"></div>
+                    <div className="terminal-button terminal-button-green"></div>
+                    <div className="terminal-title">projects.sh</div>
+                </div>
+                <div className="terminal-content">
+                    <p className="mb-4">
+                        <span className="text-primary">$</span> Displaying projects directory. Select category to filter results.
+                    </p>
+                </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                    <button
+                        key={category.id}
+                        onClick={() => setActiveFilter(category.id)}
+                        className={`px-3 py-1 text-sm rounded-md transition-colors ${
+                            activeFilter === category.id
+                                ? "bg-primary text-primary-foreground"
+                                : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                        }`}
+                    >
+                        {category.name}
+                    </button>
+                ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredProjects.map((project) => (
+                    <ProjectCard
+                        key={project.id}
+                        id={project.id}
+                        title={project.title}
+                        description={project.description}
+                        image={project.image}
+                        technologies={project.technologies}
+                    />
+                ))}
+            </div>
         </div>
-        <div className="terminal-content">
-          <p className="mb-4">
-            <span className="text-primary">$</span> Displaying projects directory. Select category to filter results.
-          </p>
-        </div>
-      </div>
-
-      <div className="flex flex-wrap gap-2">
-        {categories.map((category) => (
-          <button
-            key={category.id}
-            onClick={() => setActiveFilter(category.id)}
-            className={`px-3 py-1 text-sm rounded-md transition-colors ${
-              activeFilter === category.id
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-            }`}
-          >
-            {category.name}
-          </button>
-        ))}
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            id={project.id}
-            title={project.title}
-            description={project.description}
-            image={project.image}
-            technologies={project.technologies}
-          />
-        ))}
-      </div>
-    </div>
-  )
+    )
 }
-

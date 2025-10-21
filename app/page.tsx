@@ -11,46 +11,43 @@ export default function Home() {
   const [introComplete, setIntroComplete] = useState(false)
 
   const featuredProjects = [
-    {
-      id: "neural-network",
-      title: "Neural Network Visualizer",
-      description: "Interactive visualization of neural networks with real-time data processing and node connections.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vite", "React", "TypeScript", "D3.js"],
-    },
-    {
-      id: "crypto-dashboard",
-      title: "Crypto Dashboard",
-      description: "Real-time cryptocurrency tracking dashboard with customizable widgets and alerts.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vite", "React", "TypeScript", "WebSockets", "Chart.js"],
-    },
-    {
-      id: "ai-chatbot",
-      title: "AI Chatbot",
-      description: "Conversational AI assistant with natural language processing and machine learning capabilities.",
-      image: "/placeholder.svg?height=400&width=600",
-      technologies: ["Vite", "React", "TypeScript", "OpenAI API", "Zustand"],
-    },
+      {
+          id: "face-recognition-ml",
+          title: "Face Recognition Security System",
+          description: "Advanced ML system for facial recognition with custom algorithms (Eigenfaces, LBP, hybrid fusion) achieving 85-92% accuracy. Complete API ecosystem with 25+ endpoints and real-time alert system for security applications.",
+          image: "/placeholder.svg?height=400&width=600",
+          technologies: ["Python", "FastAPI", "OpenCV", "scikit-learn", "MySQL", "Machine Learning"],
+          category: "ai",
+          githubUrl: "https://github.com/Tunkifloo/FR-ML-API",
+          featured: true,
+      },
+      {
+          id: "therapeutic-management",
+          title: "Therapeutic Management System",
+          description: "Enterprise-level system for healthcare centers using Java 17, Jakarta EE, and Spring MVC. Complete management of medical inventory, schedules, and patient records with 99.9% availability. Led team of 5 developers delivering MVP 25% ahead of schedule.",
+          image: "/placeholder.svg?height=400&width=600",
+          technologies: ["Java 17", "Spring Boot", "Spring MVC", "Spring Data JPA", "PostgreSQL", "Docker", "Nginx"],
+          category: "web",
+          githubUrl: "https://github.com/Sauro-Dev",
+          featured: true,
+      },
+      {
+          id: "ong-management",
+          title: "NGO User & Volunteer Management System",
+          description: "Enterprise API for NGO volunteer management with JWT authentication and role-based access. Infrastructure as Code with Terraform managing AWS EC2, Cloudflare R2, and D1 database. CI/CD pipeline with Jenkins for automated testing and deployment.",
+          image: "/placeholder.svg?height=400&width=600",
+          technologies: ["Spring Boot", "Terraform", "AWS", "Docker", "Jenkins", "Cloudflare"],
+          category: "web",
+          githubUrl: "https://github.com/Tunkifloo",
+      },
   ]
-
-  const latestPosts = [
-    {
-      id: "future-of-ai",
-      title: "The Future of AI Development",
-      excerpt: "Exploring the ethical implications and technological advancements in artificial intelligence.",
-      date: "2023-05-15",
-      readingTime: "5 min read",
-    },
-  ]
-
-  const skills = ["Vite", "React", "TypeScript", "Redux", "Tailwind CSS", "React Query", "Vitest", "Zustand"]
+    const skills = ["SpringBoot", "FastAPI", "Django", "Angular CLI", "React", "NextJS", "MySQL", "Postgres", "MongoDB", "AWS Cloud" ]
 
   return (
     <div className="space-y-16">
       <section className="py-12">
         <Terminal
-          text="Hello, World. I am CYBER_DEV. Full-stack developer and AI enthusiast. Welcome to my digital realm."
+          text="Hello, World. I am Adrian Cisneros. Software Architect & Full-Stack Developer."
           typingSpeed={40}
           className="max-w-3xl mx-auto"
           onComplete={() => setIntroComplete(true)}
@@ -102,21 +99,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section>
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold">Latest from the Blog</h2>
-          <Link href="/blog" className="text-primary hover:underline inline-flex items-center gap-1">
-            View all <ArrowRight size={16} />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 gap-6">
-          {latestPosts.map((post) => (
-            <BlogCard key={post.id} {...post} />
-          ))}
         </div>
       </section>
     </div>
