@@ -10,19 +10,19 @@
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 4%;
     --popover-foreground: 0 0% 100%;
-    --primary: 160 100% 50%;
+    --primary: 180 100% 50%;
     --primary-foreground: 0 0% 0%;
     --secondary: 240 3% 12%;
     --secondary-foreground: 0 0% 100%;
     --muted: 240 3% 12%;
     --muted-foreground: 240 5% 65%;
-    --accent: 160 100% 50%;
+    --accent: 180 100% 50%;
     --accent-foreground: 0 0% 0%;
     --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
     --border: 240 3% 20%;
     --input: 240 3% 20%;
-    --ring: 160 100% 50%;
+    --ring: 180 100% 50%;
     --radius: 0.5rem;
   }
 
@@ -33,19 +33,19 @@
     --card-foreground: 0 0% 100%;
     --popover: 0 0% 4%;
     --popover-foreground: 0 0% 100%;
-    --primary: 160 100% 50%;
+    --primary: 180 100% 50%;
     --primary-foreground: 0 0% 0%;
     --secondary: 240 3% 12%;
     --secondary-foreground: 0 0% 100%;
     --muted: 240 3% 12%;
     --muted-foreground: 240 5% 65%;
-    --accent: 160 100% 50%;
+    --accent: 180 100% 50%;
     --accent-foreground: 0 0% 0%;
     --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
     --border: 240 3% 20%;
     --input: 240 3% 20%;
-    --ring: 160 100% 50%;
+    --ring: 180 100% 50%;
   }
 }
 
@@ -59,9 +59,9 @@
 }
 
 .bg-grid-pattern {
-  background-image: linear-gradient(to right, rgba(0, 255, 140, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 255, 140, 0.1) 1px, transparent 1px);
-  background-size: 20px 20px;
+    background-image: linear-gradient(to right, rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
 .glitch {
@@ -82,7 +82,7 @@
 }
 
 .glitch::before {
-  color: #00ff8c;
+  color: #00ffff;
   z-index: -1;
 }
 
@@ -126,7 +126,7 @@
   display: inline-block;
   width: 10px;
   height: 1.2em;
-  background-color: #00ff8c;
+  background-color: #00ffff;
   animation: blink 1s step-end infinite;
   vertical-align: text-bottom;
   margin-left: 2px;
@@ -144,17 +144,17 @@
 
 .card-hover {
   transition: all 0.3s ease;
-  border: 1px solid rgba(0, 255, 140, 0.2);
+  border: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .card-hover:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 255, 140, 0.2);
-  border: 1px solid rgba(0, 255, 140, 0.6);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(0, 255, 255, 0.6);
 }
 
 .terminal-window {
-  border: 1px solid rgba(0, 255, 140, 0.5);
+  border: 1px solid rgba(0, 255, 255, 0.5);
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 4px;
   padding: 1rem;
@@ -166,7 +166,7 @@
   align-items: center;
   margin-bottom: 0.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(0, 255, 140, 0.3);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
 }
 
 .terminal-button {
@@ -201,6 +201,6 @@
 
 .command-prompt::before {
   content: "$ ";
-  color: #00ff8c;
+  color: #00ffff;
 }
 

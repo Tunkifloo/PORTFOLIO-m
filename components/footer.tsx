@@ -2,39 +2,54 @@ import Link from "next/link"
 import { Github, Instagram, Linkedin, Mail } from "lucide-react"
 
 export function Footer() {
-  return (
-    <footer className="border-t border-border/40 py-6">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-sm text-muted-foreground">
-              &copy; {new Date().getFullYear()} Tunkifloo. All rights reserved.
-            </p>
-          </div>
-          <div className="flex space-x-4">
-            <Link href="https://github.com/Tunkifloo" className="text-muted-foreground hover:text-primary transition-colors">
-              <Github size={20} />
-              <span className="sr-only">GitHub</span>
-            </Link>
-            <Link href="https://www.instagram.com/acisneros.tsx?igsh=bzQ4NGJwOTFiMjgw" className="text-muted-foreground hover:text-primary transition-colors">
-              <Instagram size={20} />
-              <span className="sr-only">Instagram</span>
-            </Link>
-            <Link href="https://linkedin.com/in/adrián-cisneros-bartra-045b96255" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin size={20} />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-            <Link
-              href="nicolocisneros@gmail.com"
-              className="text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Mail size={20} />
-              <span className="sr-only">Email</span>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </footer>
-  )
+    return (
+        <footer className="border-t border-border/40 py-6">
+            <div className="container mx-auto px-4">
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                    <div className="mb-4 md:mb-0">
+                        <p className="text-sm text-muted-foreground">
+                            &copy; {new Date().getFullYear()} Adrian Cisneros. All rights reserved.
+                        </p>
+                    </div>
+                    <div className="flex space-x-4">
+                        <Link
+                            href="https://github.com/Tunkifloo"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                            <Github size={20} />
+                            <span className="sr-only">GitHub</span>
+                        </Link>
+                        <Link
+                            href="https://www.instagram.com/acisneros.tsx"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                            <Instagram size={20} />
+                            <span className="sr-only">Instagram</span>
+                        </Link>
+                        <Link
+                            href="https://linkedin.com/in/adrián-cisneros-bartra-045b96255"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                            <Linkedin size={20} />
+                            <span className="sr-only">LinkedIn</span>
+                        </Link>
+                        <Link
+                            href="mailto:nicolocisneros@gmail.com"
+                            className="text-muted-foreground hover:text-primary transition-colors"
+                        >
+                            <Mail size={20} />
+                            <span className="sr-only">Email</span>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    )
 }
 

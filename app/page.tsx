@@ -4,7 +4,6 @@ import { useState } from "react"
 import Link from "next/link"
 import { Terminal } from "@/components/terminal"
 import { ProjectCard } from "@/components/project-card"
-import { BlogCard } from "@/components/blog-card"
 import { ArrowRight } from "lucide-react"
 
 export default function Home() {
@@ -15,7 +14,7 @@ export default function Home() {
           id: "face-recognition-ml",
           title: "Face Recognition Security System",
           description: "Advanced ML system for facial recognition with custom algorithms (Eigenfaces, LBP, hybrid fusion) achieving 85-92% accuracy. Complete API ecosystem with 25+ endpoints and real-time alert system for security applications.",
-          image: "/placeholder.svg?height=400&width=600",
+          image: "/project/face-recognition.jpg",
           technologies: ["Python", "FastAPI", "OpenCV", "scikit-learn", "MySQL", "Machine Learning"],
           category: "ai",
           githubUrl: "https://github.com/Tunkifloo/FR-ML-API",
@@ -25,7 +24,7 @@ export default function Home() {
           id: "therapeutic-management",
           title: "Therapeutic Management System",
           description: "Enterprise-level system for healthcare centers using Java 17, Jakarta EE, and Spring MVC. Complete management of medical inventory, schedules, and patient records with 99.9% availability. Led team of 5 developers delivering MVP 25% ahead of schedule.",
-          image: "/placeholder.svg?height=400&width=600",
+          image: "/project/personnel-management.png",
           technologies: ["Java 17", "Spring Boot", "Spring MVC", "Spring Data JPA", "PostgreSQL", "Docker", "Nginx"],
           category: "web",
           githubUrl: "https://github.com/Sauro-Dev",
@@ -35,7 +34,7 @@ export default function Home() {
           id: "ong-management",
           title: "NGO User & Volunteer Management System",
           description: "Enterprise API for NGO volunteer management with JWT authentication and role-based access. Infrastructure as Code with Terraform managing AWS EC2, Cloudflare R2, and D1 database. CI/CD pipeline with Jenkins for automated testing and deployment.",
-          image: "/placeholder.svg?height=400&width=600",
+          image: "/project/ONGs.jpg",
           technologies: ["Spring Boot", "Terraform", "AWS", "Docker", "Jenkins", "Cloudflare"],
           category: "web",
           githubUrl: "https://github.com/Tunkifloo",

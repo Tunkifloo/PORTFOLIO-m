@@ -2,11 +2,7 @@
 
 import { useState } from "react"
 import { Terminal } from "@/components/terminal"
-import { Github, Twitter, Linkedin, Mail } from "lucide-react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import { Github, Instagram, Linkedin, Mail } from "lucide-react"
 
 export default function AboutPage() {
   const [introComplete, setIntroComplete] = useState(false)
@@ -276,116 +272,73 @@ export default function AboutPage() {
             </div>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-bold mb-6">Contact</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="terminal-window">
-                <div className="terminal-header">
-                  <div className="terminal-button terminal-button-red"></div>
-                  <div className="terminal-button terminal-button-yellow"></div>
-                  <div className="terminal-button terminal-button-green"></div>
-                  <div className="terminal-title">contact_form.sh</div>
-                </div>
-                <div className="terminal-content">
-                  <p className="mb-4">
-                    <span className="text-primary">$</span> ./send_message.sh
-                  </p>
-                  <form className="space-y-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm mb-1">
-                        <span className="text-primary">name:</span>
-                      </label>
-                      <Input id="name" placeholder="Enter your name" className="bg-background border-border" />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm mb-1">
-                        <span className="text-primary">email:</span>
-                      </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="Enter your email"
-                        className="bg-background border-border"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="block text-sm mb-1">
-                        <span className="text-primary">message:</span>
-                      </label>
-                      <Textarea
-                        id="message"
-                        placeholder="Enter your message"
-                        rows={4}
-                        className="bg-background border-border"
-                      />
-                    </div>
-                    <Button type="submit" className="w-full">
-                      Send Message
-                    </Button>
-                  </form>
-                </div>
-              </div>
+            <section className="mb-16">
+                <h2 className="text-3xl font-mono mb-8">Contact</h2>
 
-              <div className="terminal-window">
-                <div className="terminal-header">
-                  <div className="terminal-button terminal-button-red"></div>
-                  <div className="terminal-button terminal-button-yellow"></div>
-                  <div className="terminal-button terminal-button-green"></div>
-                  <div className="terminal-title">network_connections.sh</div>
+                <div className="terminal-window">
+                    <div className="terminal-header">
+                        <div className="terminal-button terminal-button-red"></div>
+                        <div className="terminal-button terminal-button-yellow"></div>
+                        <div className="terminal-button terminal-button-green"></div>
+                        <div className="terminal-title">network_connections.sh</div>
+                    </div>
+                    <div className="terminal-content">
+                        <p className="text-primary mb-6">$ ifconfig</p>
+
+                        <div className="space-y-4">
+                            <div>
+                                <p className="text-primary text-sm mb-1">github:</p>
+                                <a
+                                    href="https://github.com/Tunkifloo"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-primary transition flex items-center gap-2"
+                                >
+                                    <Github size={16} />
+                                    <span>github.com/Tunkifloo</span>
+                                </a>
+                            </div>
+
+                            <div>
+                                <p className="text-primary text-sm mb-1">instagram:</p>
+                                <a
+                                    href="https://www.instagram.com/acisneros.tsx"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-primary transition flex items-center gap-2"
+                                >
+                                    <Instagram size={16} />
+                                    <span>instagram.com/acisneros.tsx</span>
+                                </a>
+                            </div>
+
+                            <div>
+                                <p className="text-primary text-sm mb-1">linkedin:</p>
+                                <a
+                                    href="https://linkedin.com/in/adrián-cisneros-bartra-045b96255"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-primary transition flex items-center gap-2"
+                                >
+                                    <Linkedin size={16} />
+                                    <span>linkedin.com/in/Adrian-Cisneros</span>
+                                </a>
+                            </div>
+
+                            <div>
+                                <p className="text-primary text-sm mb-1">mail:</p>
+                                <a
+                                    href="mailto:nicolocisneros@gmail.com"
+                                    className="text-white hover:text-primary transition flex items-center gap-2"
+                                >
+                                    <Mail size={16} />
+                                    <span>nicolocisneros@gmail.com</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="terminal-content">
-                  <p className="mb-4">
-                    <span className="text-primary">$</span> ifconfig
-                  </p>
-                  <div className="space-y-4">
-                    <div>
-                      <p className="mb-1 text-primary">github:</p>
-                      <Link
-                        href="https://github.com/Tunkifloo"
-                        className="flex items-center gap-2 hover:text-primary transition-colors"
-                        target="_blank"
-                      >
-                        <Github size={16} />
-                        github.com/Tunkifloo
-                      </Link>
-                    </div>
-                      <div>
-                          <p className="mb-1 text-primary">instagram:</p>
-                          <Link
-                              href="https://www.instagram.com/acisneros.tsx?igsh=bzQ4NGJwOTFiMjgw"
-                              className="flex items-center gap-2 hover:text-primary transition-colors"
-                              target="_blank"
-                          >
-                              <Github size={16} />
-                              instragram.com/acisneros.tsx
-                          </Link>
-                      </div>
-                    <div>
-                      <p className="mb-1 text-primary">linkedin:</p>
-                      <Link
-                        href="https://linkedin.com/in/adrián-cisneros-bartra-045b96255"
-                        className="flex items-center gap-2 hover:text-primary transition-colors"
-                        target="_blank"
-                      >
-                        <Linkedin size={16} />
-                        linkedin.com/in/Adrian-Cisneros
-                      </Link>
-                    </div>
-                    <div>
-                      <p className="mb-1 text-primary">mail:</p>
-                      <Link
-                        href="mailto:nicolocisneros.com"
-                        className="flex items-center gap-2 hover:text-primary transition-colors"
-                      >
-                        <Mail size={16} />
-                        nicolocisneros@gmail.com
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+            </section>
         </>
       )}
     </div>

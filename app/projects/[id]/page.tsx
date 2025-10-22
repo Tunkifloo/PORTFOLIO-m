@@ -13,7 +13,7 @@ export default function ProjectPage() {
         "face-recognition-ml": {
             title: "Face Recognition Security System",
             description: "Advanced ML system for facial recognition with custom algorithms achieving 85-92% accuracy.",
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/project/face-recognition.jpg",
             technologies: ["Python", "FastAPI", "OpenCV", "scikit-learn", "MySQL", "Machine Learning"],
             category: "AI & Machine Learning",
             github: "https://github.com/Tunkifloo/FR-ML-API",
@@ -41,7 +41,7 @@ export default function ProjectPage() {
         "alpr-system": {
             title: "CARID: Automatic License Plate Recognition",
             description: "ALPR system using YOLOv8 optimized for Peruvian plates with >90% detection accuracy.",
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/project/ALRP.jpg",
             technologies: ["React", "TypeScript", "Vite", "YOLOv8", "Python", "OpenCV", "EasyOCR", "PaddleOCR"],
             category: "AI & Machine Learning",
             github: "https://github.com/GRUPO-PERCEPCION/carid-frontend",
@@ -69,7 +69,7 @@ export default function ProjectPage() {
         "face-recognition-mobile": {
             title: "Face Recognition Mobile App",
             description: "Cross-platform mobile application with real-time facial recognition capabilities.",
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/project/face-recognitionmobile.jpg",
             technologies: ["React Native", "Expo SDK 53", "TypeScript", "React Navigation", "React Native Paper", "AsyncStorage"],
             category: "Mobile Development",
             github: "https://github.com/Tunkifloo",
@@ -97,7 +97,7 @@ export default function ProjectPage() {
         "therapeutic-management": {
             title: "Therapeutic Management System",
             description: "Enterprise-level system for healthcare centers with 99.9% availability.",
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/project/personnel-management.png",
             technologies: ["Java 17", "Spring Boot", "Spring MVC", "Spring Data JPA", "Jakarta EE", "PostgreSQL", "Docker", "Nginx", "Swagger"],
             category: "Web Development",
             github: "https://github.com/Sauro-Dev",
@@ -127,7 +127,7 @@ export default function ProjectPage() {
         "ong-management": {
             title: "NGO User & Volunteer Management System",
             description: "Enterprise API for NGO with Infrastructure as Code and full CI/CD pipeline.",
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/project/ONGs.jpg",
             technologies: ["Spring Boot", "Terraform", "AWS", "Docker", "Jenkins", "Cloudflare", "JWT"],
             category: "Cloud & DevOps",
             github: "https://github.com/Tunkifloo",
@@ -156,7 +156,7 @@ export default function ProjectPage() {
         "university-enrollment": {
             title: "University Enrollment System",
             description: "Full-stack enrollment management with enterprise architecture and clean code practices.",
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/project/university.enrollment.png",
             technologies: ["Spring Boot", "React 19", "TypeScript", "PostgreSQL", "Flyway", "MapStruct", "Docker Compose", "Zustand"],
             category: "Web Development",
             github: "https://github.com/Tunkifloo/university-enrollment-system",
@@ -185,7 +185,7 @@ export default function ProjectPage() {
         "iot-temperature": {
             title: "IoT Temperature Monitoring System",
             description: "ML-powered IoT monitoring with real-time data processing and predictive analytics.",
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/project/temperature-monitoring-system.jpeg",
             technologies: ["Python 3.9", "FastAPI", "scikit-learn", "WebSockets", "ESP32", "MySQL", "Pandas", "NumPy"],
             category: "AI & Machine Learning",
             github: "https://github.com/Tunkifloo",
@@ -214,7 +214,7 @@ export default function ProjectPage() {
         "loan-management": {
             title: "Loan Management System",
             description: "Full-stack transactional system for comprehensive loan management.",
-            image: "/placeholder.svg?height=600&width=800",
+            image: "/project/LOAN-system.png",
             technologies: ["Spring Boot", "Angular", "PostgreSQL", "REST API", "JWT"],
             category: "Web Development",
             github: "https://github.com/CASO-PRESTAMOS",
