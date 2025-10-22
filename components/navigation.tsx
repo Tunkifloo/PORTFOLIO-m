@@ -19,8 +19,8 @@ export function Navigation() {
     <header className="border-b border-border/40 backdrop-blur-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-primary glitch" data-text="Tunkifloo">
-            Tunkifloo
+          <Link href="/" className="text-xl font-bold text-primary glitch" data-text="ACISNEROS">
+            ACISNEROS
           </Link>
 
           {/* Mobile menu button */}
