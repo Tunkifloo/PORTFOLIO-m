@@ -44,7 +44,7 @@ export default function ProjectPage() {
             image: "/project/ALRP.jpg",
             technologies: ["React", "TypeScript", "Vite", "YOLOv8", "Python", "OpenCV", "EasyOCR", "PaddleOCR"],
             category: "AI & Machine Learning",
-            github: "https://github.com/GRUPO-PERCEPCION/carid-frontend",
+            github: "https://github.com/GRUPO-PERCEPCION/CARID_PROJECT.git",
             demo: "",
             longDescription:
                 "Advanced Automatic License Plate Recognition (ALPR) system engineered specifically for Peruvian vehicle plates using YOLOv8 computer vision model. Achieved >90% detection precision through custom model training and optimization. Developed modern web interface using React and TypeScript with Vite for optimal performance, supporting three recognition modes: static image analysis, video processing, and real-time camera streaming. Integrated multiple OCR engines (EasyOCR, PaddleOCR) with intelligent preprocessing for diverse lighting and weather conditions. Implemented SUNARP integration for automatic vehicle information lookup and verification. Optimized inference time to <150ms for edge deployment on Raspberry Pi devices. The system processes images through a complete pipeline: plate detection, character segmentation, OCR recognition, and database verification.",
@@ -72,7 +72,7 @@ export default function ProjectPage() {
             image: "/project/face-recognitionmobile.jpg",
             technologies: ["React Native", "Expo SDK 53", "TypeScript", "React Navigation", "React Native Paper", "AsyncStorage"],
             category: "Mobile Development",
-            github: "https://github.com/Tunkifloo",
+            github: "https://github.com/Tunkifloo/FR-ML-FRONT.git",
             demo: "https://expo.dev/accounts/tunkifloo/projects/face-recognition-app",
             longDescription:
                 "Cross-platform mobile application developed with React Native and Expo for iOS and Android devices. Seamlessly integrates with the FR-ML API backend to provide comprehensive user management and real-time facial recognition capabilities. Features Material Design UI implementation with React Native Paper components for consistent, modern interface. Includes comprehensive dashboard with system statistics, user analytics, and recognition history. Implements intelligent security alert system with visual and audio notifications for persons of interest. Built with offline-capable architecture using AsyncStorage for local data persistence and robust error handling. Automated build pipeline with EAS Build for production-ready deployments and OTA (Over-The-Air) updates. Optimized camera integration for real-time image capture and processing.",
@@ -100,7 +100,7 @@ export default function ProjectPage() {
             image: "/project/personnel-management.png",
             technologies: ["Java 17", "Spring Boot", "Spring MVC", "Spring Data JPA", "Jakarta EE", "PostgreSQL", "Docker", "Nginx", "Swagger"],
             category: "Web Development",
-            github: "https://github.com/Sauro-Dev",
+            github: "https://github.com/Sauro-Dev/PLENA-APP-BACK.git",
             demo: "",
             longDescription:
                 "Architected complete enterprise-level system for healthcare centers using Java 17, Jakarta EE, Spring MVC, and Spring Data JPA. The system comprehensively manages medical inventory with automated stock alerts, staff scheduling with appointment management, and complete patient administration with medical history tracking. Led cross-functional team of 5 developers implementing Scrum methodology, successfully delivering MVP 25% ahead of schedule with all core features functional. Designed robust MVC architecture with Swagger-documented RESTful APIs, role-based authentication, and comprehensive data validation achieving 99.9% system availability. Implemented complete containerization with Docker Compose orchestrating multiple services, Nginx as reverse proxy and load balancer, reducing deployment time by 60%. Developed intelligent alert system for low medical stock inventory and automatic appointment notifications. Optimized performance through enterprise design patterns, connection pooling, and session caching, improving response times by 40%.",
@@ -130,7 +130,7 @@ export default function ProjectPage() {
             image: "/project/ONGs.jpg",
             technologies: ["Spring Boot", "Terraform", "AWS", "Docker", "Jenkins", "Cloudflare", "JWT"],
             category: "Cloud & DevOps",
-            github: "https://github.com/Tunkifloo",
+            github: "https://github.com/Sauro-Dev/MTD-APP-BACK.git",
             demo: "",
             longDescription:
                 "Architected enterprise-grade API for NGO 'Make The Difference' volunteer management system featuring JWT authentication and comprehensive role-based access control. Implemented Infrastructure as Code (IaC) using Terraform to manage complete cloud infrastructure including AWS EC2 instances, Cloudflare R2 object storage, and Cloudflare D1 edge database. Built robust CI/CD pipeline with Jenkins for automated testing, building, and deployment workflows. Designed cloud-native architecture leveraging Docker containerization for consistent deployment across environments and scalable microservices architecture. Integrated multiple services including email notifications via SendGrid, secure file storage in Cloudflare R2, and comprehensive user management with profile photos and document uploads. Implemented advanced security features including password encryption, JWT token refresh, and audit logging for compliance.",
@@ -217,7 +217,7 @@ export default function ProjectPage() {
             image: "/project/LOAN-system.png",
             technologies: ["Spring Boot", "Angular", "PostgreSQL", "REST API", "JWT"],
             category: "Web Development",
-            github: "https://github.com/CASO-PRESTAMOS",
+            github: "https://github.com/CASO-PRESTAMOS/back-prestamos.git",
             demo: "",
             longDescription:
                 "Complete full-stack transactional system designed for loan management with secure REST API backend and responsive Angular frontend. Implements comprehensive financial transaction processing including loan applications, approvals, payment schedules, and balance tracking. Features robust authentication system with JWT tokens and role-based access control for different user types (customers, loan officers, administrators). Backend built with Spring Boot providing RESTful endpoints for all CRUD operations, transaction management, and business logic validation. Angular frontend delivers responsive, user-friendly interface with real-time updates, interactive forms, and comprehensive reporting dashboards. PostgreSQL database ensures ACID compliance for financial transactions. Includes automated payment reminders, late fee calculations, and detailed audit trails for compliance. System handles complex loan calculations including interest rates, amortization schedules, and early payment scenarios.",
@@ -238,6 +238,119 @@ export default function ProjectPage() {
                 frontend: "Angular",
                 database: "PostgreSQL",
                 auth: "JWT + RBAC"
+            }
+        },
+
+        "university-enrollment-msvc": {
+            title: "University Enrollment System - Microservices Architecture and CI/CD",
+            description: "Distributed enterprise system with Event-Driven Architecture deployed on AWS EC2 via Self-Hosted CI/CD pipelines.",
+            image: "/project/university.enrollment.png",
+            technologies: [
+                "Spring Boot 3.5.6",
+                "Spring Cloud Gateway",
+                "Eureka Server",
+                "Apache Kafka",
+                "RabbitMQ",
+                "AWS EC2",
+                "GitHub Actions CI(Self-Hosted)",
+                "GitHub Actions CD(Runner)",
+                "PostgreSQL",
+                "React 19",
+                "SonarQube"
+            ],
+            category: "Cloud & DevOps",
+            github: "https://github.com/Tunkifloo/university-enrollment-cicd.git",
+            demo: "",
+            longDescription:
+                "A sophisticated enterprise management system migrated from monolithic to microservices architecture. The system orchestrates 6 distinct microservices (Auth, Matriculas, Audit, Email, Gateway, Eureka) communicating via REST and asynchronous events. \n\n" +
+                "The infrastructure is fully dockerized and deployed on AWS EC2 instances using a custom CI/CD pipeline with Self-Hosted GitHub Actions Runners, enabling production deployments with approval gates. It features advanced observability with distributed tracing, Actuator endpoints, and SonarQube quality gates. Data persistence is handled by three isolated PostgreSQL databases (Auth, Audit, Matriculas) to ensure strict service decoupling.",
+            features: [
+                "Microservices Ecosystem: Service Discovery (Eureka), API Gateway, and Config Server",
+                "Event-Driven Architecture: Kafka for Audit logging & RabbitMQ for Async Emailing",
+                "DevOps & CI/CD: Automated pipelines on AWS EC2 Self-Hosted Runners",
+                "Security: JWT Authentication, Role-Based Access Control (RBAC), and Gateway filtering",
+                "Quality Assurance: Integrated SonarQube scanning and automated testing in CI pipeline",
+                "Infrastructure: Docker Compose orchestration with health checks and auto-healing",
+                "Frontend: Modern React 19 + TypeScript interface with Zustand state management"
+            ],
+            metrics: {
+                architecture: "Microservices",
+                infrastructure: "AWS EC2 + Docker",
+                deployment: "GitHub Actions (Self-Hosted)",
+                messaging: "Kafka + RabbitMQ"
+            }
+        },
+
+        "iot-attendance-system": {
+            title: "IoT Attendance & Access Control System",
+            description: "Enterprise REST API with Hexagonal Architecture for biometric security and workforce management.",
+            image: "/project/access_control.jpg",
+            technologies: [
+                "Java 21",
+                "Spring Boot 3.5.8",
+                "PostgreSQL 17",
+                "Firebase Realtime DB",
+                "Docker",
+                "Hexagonal Architecture",
+                "ESP32 Integration",
+                "Spring Data JPA"
+            ],
+            category: "Backend & IoT System",
+            github: "https://github.com/Tunkifloo/attendance-access-control-api",
+            demo: "",
+            longDescription:
+                "A high-performance Enterprise REST API designed to bridge the gap between physical IoT hardware and digital workforce management. Built on the latest Java 21 stack, the system implements a strict Hexagonal Architecture (Ports & Adapters) to decouple business logic from external dependencies.\n\n" +
+                "The system acts as a central coordination layer, synchronizing biometric data (fingerprints) and RFID events from ESP32 microcontrollers through Firebase Realtime Database as a message broker. It features complex business logic for attendance tracking, including a 'Smart Detection Algorithm' that automatically infers check-in/check-out states, handles night shifts crossing midnight, and calculates lateness with second-level precision. Data persistence is managed by PostgreSQL 17 with optimized indexing for high-volume audit logs.",
+            features: [
+                "Hexagonal Architecture: Strict separation of Domain, Application, and Infrastructure layers",
+                "Biometric Synchronization: Synchronous flow for fingerprint registration on remote ESP32 hardware",
+                "Smart Attendance Logic: Automatic detection of night shifts and day-spanning schedules",
+                "Real-time Event Processing: Asynchronous hardware event detection via Firebase Polling",
+                "Security & Auditing: Comprehensive immutable logging of all access attempts (granted/denied)",
+                "Tech Stack: Java 21 (LTS), Spring Boot 3.5, and PostgreSQL 17",
+                "Hardware Integration: Manages RFID-RC522 and Adafruit Fingerprint sensors via Cloud"
+            ],
+            metrics: {
+                architecture: "Hexagonal (Ports & Adapters)",
+                latency: "Real-time (Firebase Sync)",
+                database: "PostgreSQL 17",
+                uptime: "Designed for 24/7 Operation"
+            }
+        },
+
+        "therapeutic-demand-prediction": {
+            title: "Therapeutic Materials Demand Prediction",
+            description: "Production-grade Machine Learning API for optimizing medical inventory in pediatric rehabilitation centers.",
+            image: "/project/prediction.jpg",
+            technologies: [
+                "Python 3.9",
+                "FastAPI",
+                "Scikit-learn",
+                "Lasso Regression",
+                "Docker Compose",
+                "Pydantic",
+                "Pandas"
+            ],
+            category: "AI & Machine Learning",
+            github: "https://github.com/Tunkifloo/therapeutic-materials-predictor-API.git",
+            demo: "",
+            longDescription:
+                "A specialized Machine Learning REST API designed to forecast monthly demand for therapeutic materials (Sensory, Reading, etc.) in pediatric rehabilitation centers. The system operationalizes a Lasso Regression model (alpha=5.0) to provide accurate predictions based on historical lags, seasonal patterns, and session volume.\n\n" +
+                "Unlike simple notebooks, this is a production-hardened API built with FastAPI that guarantees high performance with <20ms inference latency and ~50 req/s throughput. It features a robust architecture with Pydantic for strict data validation, structured logging for auditing, and full Docker containerization for reproducible deployments. The model achieves an R² of 0.83 on test data, successfully identifying complex demand patterns across different therapy types.",
+            features: [
+                "High Performance: Real-time predictions with <20ms latency",
+                "Robust ML Model: Lasso Regression trained on historical datasets",
+                "Data Validation: Strict input schema enforcement using Pydantic",
+                "Interactive Documentation: Integrated Swagger UI and ReDoc",
+                "Production Ready: Health checks, structured logging, and CORS handling",
+                "Containerization: Optimized Docker images for easy deployment",
+                "Scalability: Designed for horizontal scaling with Uvicorn workers"
+            ],
+            metrics: {
+                accuracy: "R² 0.83",
+                latency: "~20ms",
+                throughput: "50 req/s",
+                model: "Lasso Regression"
             }
         },
     }

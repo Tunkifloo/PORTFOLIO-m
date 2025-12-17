@@ -7,7 +7,7 @@ export default function ProjectsPage() {
     const [activeFilter, setActiveFilter] = useState<string>("all")
 
     const projects = [
-        // Proyecto destacado 1: Reconocimiento Facial
+        // Proyecto 1: Reconocimiento Facial
         {
             id: "face-recognition-ml",
             title: "Face Recognition Security System",
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
             category: "ai",
         },
 
-        // Proyecto destacado 2: ALPR System
+        // Proyecto 2: ALPR System
         {
             id: "alpr-system",
             title: "CARID: License Plate Recognition",
@@ -85,6 +85,36 @@ export default function ProjectsPage() {
             image: "/project/LOAN-system.png",
             technologies: ["Spring Boot", "Angular", "PostgreSQL", "REST API"],
             category: "web",
+        },
+
+        // Proyecto 9: Sistema Matrículas de Estudiantes
+        {
+            id: "university-enrollment-msvc",
+            title: "University Enrollment System (Microservices) CI/CD",
+            description: "Enterprise distributed system on AWS EC2 using Self-Hosted GitHub Runners. Microservices architecture with Spring Cloud, Kafka, RabbitMQ, and centralized monitoring.",
+            image: "/project/university.enrollment.png",
+            technologies: ["Spring Cloud", "AWS EC2", "GitHub Actions", "Kafka", "Docker", "React"],
+            category: "cloud",
+        },
+
+        // Proyecto 10: Sistema control de Asistencias
+        {
+            id: "iot-attendance-system",
+            title: "IoT Biometric Access & Attendance API",
+            description: "Enterprise-grade REST API built with Java 21 and Hexagonal Architecture. Orchestrates IoT devices (ESP32) via Firebase for real-time biometric access control and attendance tracking.",
+            image: "/project/access_control.jpg",
+            technologies: ["Java 21", "Spring Boot 3.5", "Hexagonal Arch", "Firebase", "PostgreSQL", "Docker"],
+            category: "web",
+        },
+
+        // Proyecto 11: Demand Batch prediction API
+        {
+            id: "therapeutic-demand-prediction",
+            title: "Therapeutic Demand Prediction API",
+            description: "High-performance ML API (FastAPI) for forecasting medical inventory. Implements Lasso Regression with <20ms inference time and robust Pydantic validation.",
+            image: "/project/prediction.jpg",
+            technologies: ["Python", "FastAPI", "Scikit-learn", "Docker", "Pandas"],
+            category: "ai",
         },
     ]
 

@@ -11,13 +11,13 @@ export default function Home() {
 
   const featuredProjects = [
       {
-          id: "face-recognition-ml",
-          title: "Face Recognition Security System",
-          description: "Advanced ML system for facial recognition with custom algorithms (Eigenfaces, LBP, hybrid fusion) achieving 85-92% accuracy. Complete API ecosystem with 25+ endpoints and real-time alert system for security applications.",
-          image: "/project/face-recognition.jpg",
-          technologies: ["Python", "FastAPI", "OpenCV", "scikit-learn", "MySQL", "Machine Learning"],
-          category: "ai",
-          githubUrl: "https://github.com/Tunkifloo/FR-ML-API",
+          id: "university-enrollment-msvc",
+          title: "University Enrollment System (Microservices) CI/CD",
+          description: "Enterprise distributed system on AWS EC2 using Self-Hosted GitHub Runners. Microservices architecture with Spring Cloud, Kafka, RabbitMQ, and centralized monitoring.",
+          image: "/project/university.enrollment.png",
+          technologies: ["Spring Cloud", "AWS EC2", "GitHub Actions", "Kafka", "Docker", "React"],
+          category: "cloud",
+          githubUrl: "https://github.com/Tunkifloo/university-enrollment-cicd.git",
           featured: true,
       },
       {
@@ -27,7 +27,7 @@ export default function Home() {
           image: "/project/personnel-management.png",
           technologies: ["Java 17", "Spring Boot", "Spring MVC", "Spring Data JPA", "PostgreSQL", "Docker", "Nginx"],
           category: "web",
-          githubUrl: "https://github.com/Sauro-Dev",
+          githubUrl: "https://github.com/Sauro-Dev/PLENA-APP-BACK.git",
           featured: true,
       },
       {
@@ -37,10 +37,10 @@ export default function Home() {
           image: "/project/ONGs.jpg",
           technologies: ["Spring Boot", "Terraform", "AWS", "Docker", "Jenkins", "Cloudflare"],
           category: "web",
-          githubUrl: "https://github.com/Tunkifloo",
+          githubUrl: "https://github.com/Sauro-Dev/MTD-APP-BACK.git",
       },
   ]
-    const skills = ["SpringBoot", "FastAPI", "Django", "Angular CLI", "React", "NextJS", "MySQL", "Postgres", "MongoDB", "AWS Cloud" ]
+    const skills = ["Java","Python", "JS/TS","SpringBoot", "SpringCloud", "FastAPI", "Angular", "React", "NextJS", "MySQL", "Postgres", "AWS", "CI/CD"]
 
   return (
     <div className="space-y-16">
