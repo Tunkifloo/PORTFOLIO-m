@@ -131,7 +131,7 @@ export default function AboutPage() {
                                     src="/certs/YOOO.jpeg"
                                     alt="Profile"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover object-top"
                                     priority
                                 />
                             </div>
