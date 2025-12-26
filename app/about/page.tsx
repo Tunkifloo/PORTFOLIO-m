@@ -44,6 +44,22 @@ const experiences = [
         ]
     },
     {
+        id: "iot-university-startup",
+        company: "University Startup at UPAO",
+        title: "IoT Web Developer",
+        period: "August 2024 - December 2024",
+        location: "Trujillo, Perú",
+        type: "Part-time",
+        description: "Developed a real-time temperature monitoring system driven by Linear Regression and prediction algorithms. Built a complete ecosystem integrating ESP32 microcontrollers with a Python/FastAPI backend and advanced data visualization.",
+        achievements: [
+            "Developed complete REST API with Python 3.9 and FastAPI for real-time processing of IoT sensor data (DHT22/DS18B20)",
+            "Implemented Machine Learning algorithms from scratch using scikit-learn (Linear/Polynomial Regression, ARIMA) for thermal trend prediction",
+            "Built real-time data pipeline with WebSockets streaming 1000+ readings per minute from ESP32 microcontrollers",
+            "Designed intelligent predictive system anticipating temperature changes with 92% accuracy using sliding windows",
+            "Integrated time-series optimized MySQL database storing 6+ months of historical data for predictive analysis"
+        ]
+    },
+    {
         id: "make-the-difference",
         company: "Make The Difference (ONG)",
         title: "Software Architect & Backend Lead",
@@ -130,13 +146,11 @@ export default function AboutPage() {
 
                                 {/* CV */}
                                 <p className="text-lg leading-relaxed text-muted-foreground max-w-2xl">
-                                    Arquitecto y Desarrollador de Software con 2 años de experiencia.
-                                    Especializado en arquitecturas monolíticas, **microservicios e IA**.
-                                    Cuento con **certificación profesional en Gestión de Proyectos basado en el PMBOK ** y **Metodologías Ágiles**,
-                                    lo que potencia mi capacidad para liderar equipos técnicos. Actualmente continúo
-                                    perfeccionando mi perfil técnico con el programa de especialización en **Arquitectura de Software en TECSUP**.
-                                    Tengo experiencia liderando equipos de desarrollo, implementando infraestructura cloud
-                                    y entregando productos escalables para startups y ONGs.
+                                    Software Architect and Developer with 2 years of experience building scalable solutions. Specialized in monolithic architectures, microservices, and AI.
+
+                                    I hold professional certifications in Project Management (PMBOK 7th Ed.) and Agile Methodologies, and have successfully completed a specialization in Software Architecture at TECSUP. This background empowers me to bridge the gap between code and strategy, leading technical teams to deliver high-quality engineering products.
+
+                                    Proven experience leading development squads, implementing cloud infrastructure, and delivering robust solutions for startups and NGOs.
                                 </p>
 
                                 {/* SKILLS CV */}

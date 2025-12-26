@@ -1,14 +1,21 @@
 "use client"
 
+import { useState, useCallback } from "react"
 import { useParams, notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Github, ExternalLink } from "lucide-react"
+import { Terminal } from "@/components/terminal"
 
 export default function ProjectPage() {
-    const { id } = useParams<{ id: string }>()
 
-    // Todos tus proyectos con información detallada
+    const { id } = useParams<{ id: string }>()
+    const [showContent, setShowContent] = useState(false)
+
+    const handleTerminalComplete = useCallback(() => {
+        setShowContent(true)
+    }, [])
+
     const projects = {
         "face-recognition-ml": {
             title: "Face Recognition Security System",
@@ -361,61 +368,123 @@ export default function ProjectPage() {
         notFound()
     }
 
-    return (
-        <div className="space-y-8">
-            <Link href="/projects" className="inline-flex items-center gap-2 text-primary hover:underline">
-                <ArrowLeft size={16} /> Back to projects
-            </Link>
+    const terminalCommand = `
+./access_project.sh --id ${id}
+`.trim()
 
-            <div className="terminal-window">
-                <div className="terminal-header">
-                    <div className="terminal-button terminal-button-red"></div>
-                    <div className="terminal-button terminal-button-yellow"></div>
-                    <div className="terminal-button terminal-button-green"></div>
-                    <div className="terminal-title">project_details.sh</div>
-                </div>
-                <div className="terminal-content">
-                    <p className="mb-2">
-                        <span className="text-primary">$</span> cat {id}.json
-                    </p>
-                    <div className="mb-4">
-                        <p>
-                            <span className="text-primary">title:</span> {project.title}
-                        </p>
-                        <p>
-                            <span className="text-primary">category:</span> {project.category}
-                        </p>
-                        <p className="flex flex-wrap gap-2 mt-2">
-                            <span className="text-primary">stack:</span>
-                            {project.technologies.map((tech, index) => (
-                                <span key={index} className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded">
-                  {tech}
-                </span>
-                            ))}
-                        </p>
+    return (
+        <div className="min-h-screen space-y-8">
+            {/* 1. Terminal de Carga */}
+            {!showContent && (
+                <Terminal
+                    text={terminalCommand}
+                    typingSpeed={30}
+                    showPrompt={true}
+                    onComplete={handleTerminalComplete}
+                    className="mb-8"
+                />
+            )}
+
+            {/* 2. Contenido Principal con Animación y Corrección de Imagen */}
+            {showContent && (
+                <div className="opacity-0 animate-fade-up space-y-8">
+                    <Link href="/projects" className="inline-flex items-center gap-2 text-primary hover:underline">
+                        <ArrowLeft size={16} /> Back to projects
+                    </Link>
+
+                    {/* Ventana de Terminal Estática (Decorativa) */}
+                    <div className="terminal-window">
+                        <div className="terminal-header">
+                            <div className="terminal-button terminal-button-red"></div>
+                            <div className="terminal-button terminal-button-yellow"></div>
+                            <div className="terminal-button terminal-button-green"></div>
+                            <div className="terminal-title">project_details.sh</div>
+                        </div>
+                        <div className="terminal-content">
+                            <p className="mb-2">
+                                <span className="text-primary">$</span> cat {id}.json
+                            </p>
+                            <div className="mb-4">
+                                <p>
+                                    <span className="text-primary">title:</span> {project.title}
+                                </p>
+                                <p>
+                                    <span className="text-primary">category:</span> {project.category}
+                                </p>
+                                <p className="flex flex-wrap gap-2 mt-2">
+                                    <span className="text-primary">stack:</span>
+                                    {project.technologies.map((tech, index) => (
+                                        <span key={index} className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded">
+                                            {tech}
+                                        </span>
+                                    ))}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="w-full rounded-md overflow-hidden border border-border/50 bg-secondary/10">
+                        <Image
+                            src={project.image || "/placeholder.svg"}
+                            alt={project.title}
+                            width={1920}
+                            height={1080}
+                            className="w-full h-auto object-contain"
+                            priority
+                        />
+                    </div>
+
+                    <div className="flex flex-wrap gap-4">
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground px-4 py-2 rounded-md transition-colors"
+                        >
+                            <Github size={16} /> View on GitHub
+                        </a>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div className="lg:col-span-2 prose prose-invert max-w-none">
+                            <h2 className="text-2xl font-bold mb-4 text-primary">Project Overview</h2>
+                            <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                                {project.longDescription}
+                            </p>
+
+                            <h3 className="text-xl font-bold mt-8 mb-4 text-primary">Key Features</h3>
+                            <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 list-none p-0">
+                                {project.features.map((feature, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-muted-foreground">
+                                        <span className="text-green-500 mt-1">✓</span>
+                                        {feature}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div className="space-y-6">
+                            <div className="bg-secondary/20 p-6 rounded-lg border border-border/50">
+                                <h3 className="text-lg font-bold mb-4 text-primary flex items-center gap-2">
+                                    <span className="text-green-500">Project Metrics</span>
+                                </h3>
+                                <div className="space-y-4">
+                                    {Object.entries(project.metrics).map(([key, value]) => (
+                                        <div key={key} className="flex justify-between items-center border-b border-border/30 pb-2 last:border-0">
+                                            <span className="text-sm text-muted-foreground capitalize">
+                                                {key.replace(/([A-Z])/g, ' $1').trim()}
+                                            </span>
+                                            <span className="font-mono text-sm font-bold text-green-400">
+                                                {value}
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div className="relative h-80 rounded-md overflow-hidden">
-                <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-                <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-secondary hover:bg-secondary/80 text-secondary-foreground px-4 py-2 rounded-md transition-colors"
-                >
-                    <Github size={16} /> View on GitHub
-                </a>
-            </div>
-
-            <div className="prose prose-invert max-w-none">
-                <h2 className="text-2xl font-bold mb-4">Project Overview</h2>
-                <p className="text-muted-foreground">{project.longDescription}</p>
-            </div>
+            )}
         </div>
     )
 }

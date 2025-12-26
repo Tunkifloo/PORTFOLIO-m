@@ -1,10 +1,22 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useCallback } from "react"
 import { ProjectCard } from "@/components/project-card"
+import { Terminal } from "@/components/terminal"
 
 export default function ProjectsPage() {
+
+    const [showContent, setShowContent] = useState(false)
     const [activeFilter, setActiveFilter] = useState<string>("all")
+
+    const handleTerminalComplete = useCallback(() => {
+        setShowContent(true)
+    }, [])
+
+    const terminalCommand = `
+./load_projects.sh --verbose
+> Initializing projects module...
+`.trim()
 
     const projects = [
         // Proyecto 1: Reconocimiento Facial
@@ -130,49 +142,64 @@ export default function ProjectsPage() {
         activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
 
     return (
-        <div className="space-y-8">
-            <div className="terminal-window">
-                <div className="terminal-header">
-                    <div className="terminal-button terminal-button-red"></div>
-                    <div className="terminal-button terminal-button-yellow"></div>
-                    <div className="terminal-button terminal-button-green"></div>
-                    <div className="terminal-title">projects.sh</div>
-                </div>
-                <div className="terminal-content">
-                    <p className="mb-4">
-                        <span className="text-primary">$</span> Displaying projects directory. Select category to filter results.
-                    </p>
-                </div>
-            </div>
+        <div className="space-y-8 min-h-screen">
+            <Terminal
+                text={terminalCommand}
+                typingSpeed={25}
+                showPrompt={true}
+                onComplete={handleTerminalComplete}
+                className="mb-8"
+            />
 
-            <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
-                    <button
-                        key={category.id}
-                        onClick={() => setActiveFilter(category.id)}
-                        className={`px-3 py-1 text-sm rounded-md transition-colors ${
-                            activeFilter === category.id
-                                ? "bg-primary text-primary-foreground"
-                                : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-                        }`}
-                    >
-                        {category.name}
-                    </button>
-                ))}
-            </div>
+            {/* Renderizado condicional del contenido */}
+            {showContent && (
+                // Usamos animate-fade-up que definimos en CSS
+                <div className="opacity-0 animate-fade-up space-y-8">
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredProjects.map((project) => (
-                    <ProjectCard
-                        key={project.id}
-                        id={project.id}
-                        title={project.title}
-                        description={project.description}
-                        image={project.image}
-                        technologies={project.technologies}
-                    />
-                ))}
-            </div>
+                    {/* Filtros */}
+                    <div className="flex flex-wrap gap-2">
+                        {categories.map((category) => (
+                            <button
+                                key={category.id}
+                                onClick={() => setActiveFilter(category.id)}
+                                className={`px-3 py-1 text-sm rounded-md transition-colors ${
+                                    activeFilter === category.id
+                                        ? "bg-primary text-primary-foreground"
+                                        : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                                }`}
+                            >
+                                {category.name}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Grid de Proyectos */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {filteredProjects.map((project, index) => (
+                            <div
+                                key={project.id}
+                                className="opacity-0 animate-fade-up fill-mode-forwards"
+                                style={{ animationDelay: `${index * 150}ms` }}
+                            >
+                                <ProjectCard
+                                    id={project.id}
+                                    title={project.title}
+                                    description={project.description}
+                                    image={project.image}
+                                    technologies={project.technologies}
+                                />
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Mensaje de vacío */}
+                    {filteredProjects.length === 0 && (
+                        <div className="text-center py-12 text-muted-foreground font-mono">
+                            $ Error: No modules found for category '{activeFilter}'
+                        </div>
+                    )}
+                </div>
+            )}
         </div>
     )
 }
