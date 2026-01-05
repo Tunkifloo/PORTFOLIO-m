@@ -96,6 +96,16 @@ const certifications = [
         pdfPath: "/certs/Certificación-MetodologíasÁgiles.pdf",
         skills: ["Scrum", "Kanban", "Design Thinking", "Lean Startup"],
         logoPath: "/certs/cip-logo.png",
+    },
+    {
+        id: "software-architecture-tecsup",
+        title: "Bootcamp de Especialización en Arquitectura de Software",
+        issuer: "TECSUP",
+        date: "Enero 2026",
+        credentialId: "COD/CPE/25/253",
+        pdfPath: "/certs/Certificación-ARQ-SOFT.pdf",
+        skills: ["Microservicios", "Patrones de Diseño", "Sistemas Distribuidos", "Cloud Security"],
+        logoPath: "/certs/tecsup-logo.png",
     }
 ]
 
